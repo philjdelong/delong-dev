@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <nav class="master_nav">
+      <span align='center' class="link">
+        <%= link_to "projects", "/projects" %>
+        <%= link_to "background", "/background" %>
+        <%= link_to "education", "/education" %>
+        <%= link_to "calendar", "/calendar" %>
+      </span>
+
+      <div id='profile_image'>
+        <%= link_to(image_tag("profile_pic.png", alt: "Profile Image"), "/") %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
