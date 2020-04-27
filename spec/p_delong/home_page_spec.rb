@@ -10,11 +10,11 @@ RSpec.describe "As a user" do
 			expect(page).to have_css("#profile_image")
 		end
 
-		xit "i see a nav with home about background education" do
-			expect(page).to have_link('home')
+		it "i see a nav with home about background education" do
 			expect(page).to have_link('projects')
 			expect(page).to have_link('education')
 			expect(page).to have_link('background')
+			expect(page).to have_link('calendar')
 		end
 	end
 end
