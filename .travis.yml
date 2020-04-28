@@ -7,5 +7,4 @@ rbenv:
   - 2.4.1
   
 script:
-    - bundle 
-    - rails db:create
+    - bundle exec rails db:migrate db:reset db:setup RAILS_ENV=test
