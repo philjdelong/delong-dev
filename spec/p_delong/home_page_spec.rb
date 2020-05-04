@@ -13,7 +13,7 @@ RSpec.describe "As a user" do
 		it "i see a nav with home about background education" do
 			expect(page).to have_link('projects')
 			expect(page).to have_link('education')
-			expect(page).to have_link('background')
+			expect(page).to have_link('career')
 			expect(page).to have_link('calendar')
 		end
 	end

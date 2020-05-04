@@ -14,10 +14,32 @@
  *= require_self
  */
 
- .nav {
+	.master_nav {
+		padding: 20px;
+		background-color: whitesmoke;
+	}
 
- }
+ 	.description {
+		float: right;
+		width: 50%;
+		padding-right: 10%;
+		/* background-color: whitesmoke; */
+	}
 
- #profile {
-	 
- }
+	.profile_image {
+		float: left;
+		padding: 5%;
+		padding-top: 50px;
+	}
+
+	img {
+		border-radius: 30px;
+		width: 25%;
+		position: absolute;
+	}
+
+	a {
+		text-decoration: none;
+		color: firebrick;
+		font-size: 125%;
+	}
