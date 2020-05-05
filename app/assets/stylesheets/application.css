@@ -15,31 +15,42 @@
  */
 
 	.master_nav {
-		padding: 20px;
 		background-color: whitesmoke;
+		position: fixed;
+		width: 100%;
+		height: 150px;
 	}
 
  	.description {
 		float: right;
-		width: 50%;
+		width: 52%;
 		padding-right: 10%;
-		/* background-color: whitesmoke; */
+		padding-top: 200px;
 	}
 
 	.profile_image {
 		float: left;
 		padding: 5%;
-		padding-top: 50px;
-	}
 
+	}
+	
 	img {
+		position: fixed;
 		border-radius: 30px;
 		width: 25%;
-		position: absolute;
 	}
 
 	a {
 		text-decoration: none;
 		color: firebrick;
 		font-size: 125%;
+	}
+
+	h3 {
+		color: firebrick;
+		/* color:  rgb(34, 104, 178); */
+	}
+
+	p {
+		padding-inline-start: 2%;
 	}
