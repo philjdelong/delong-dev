@@ -1,23 +1,77 @@
 <div class='description'>
 	<h1>Projects:</h1>
-		<p>
-			My name is Phil DeLong and I'm a dedicated Backend Developer with a demonstrated history in Product Management, Sales, and Marketing for medical technology groups. As a back-end developer, I have experience creating scalable web applications within a in a fast-paced, challenging environment. I enjoy problem-solving and learning new ways to approach obstacles.
-		</p>
-			<br>
+	<p>
+		The projects listed below are a culmination of works completed during my time at Turing as well as post-graduation. My goal is to display the growth that I was able to achieve in just a short amount of time.
+	</p>
+	<p>
+		In attempts to not only learn how to create dynamic, scalable applications, I focused much of my time learning new skills. I wanted to expand upon my knowledge by solidifying familiar concepts as well as incorporate new, useful tools with each project.
+	</p>
+		<br>
 
-		<h3>Early Career</h3>
-		<p>
-			I loved my first job for all of the challenges and fast-spanaced nature of the work. I learned to think quickly and communicate well while under high-pressure situations. I continued to grow and expand my knowledge of medical devices where I held further roles in Sales, and Commercial Marketing for some of the most innovative Orthopedic firms in the world.
-		</p>
+	<h3><%= link_to("GameOn", "https://github.com/Mod-4-Cross-Pol/BE-game-on") %></h3>
+	<p>Full-stack project designed to connect users with local pick-up games and ativities. Post new activities to the community event board or join events by reserving a spot in real-time. Google Location API used for maps. 
+	<ul>
+		<li>Python
+		<li>Flask
+		<li>SQLAlchemy
+		<li>JavaScript
+		<li>React Native
+	</ul>
+	<div class='photo'>
+		<%= image_tag("game_on.png", alt: "GameOn") %>
+	</div>
+	<div align='center' class='caption'>
+		<h5>Modile app screen shots for GameOn</h5>
+	</div>
+	<br>
 
-		<p>
-			When I decided to step away from the that career I had spent 7-years building and perfecting, I was very proud of the work that I was involved in. I enjoyed the people, the focus, and the mission. But the piece that was lacking for me was the freedom of creativity. I was highly-skilled at USING tools to solve probelms, but my dream is to CREATE tools to solve problems.
-		</p>
-			<br>
+	<h3><%= link_to "InkTank", "https://github.com/philjdelong/ink_tank_ui" %></h3>
+	<p>Web application with UX focused on enhancing Tatoo Artists’ marketability by connecting them with customers based on style, location, and availability. Google API for profile image, login, media data. Stripe API for taking card payments. 		
+	<ul>
+		<li>Ruby on Rails
+		<li>Postgresql
+		<li>Sinatra
+	</ul>
+	<div class='photo'>
+		<%= image_tag("ink_tank.png", alt: "InkTank") %>
+	</div>
+	<div align='center' class='caption'>
+		<h5>InkTank home page displaying tattoo images based on search criteria</h5>
+	</div>
+	<br>
 
-		<h3>Transition into Software</h3>
-		<p>
-			For several years I dabbled in code here and there, but finally decided to make the leap into software and enrolled in Turing School of Software of Design's Backend Engineering program in Denver, CO. In doing so, I've built a strong foundation for my future in Software Development and feel grateful for the experiences that led me to this point. 
-		</p>
-			<br>
+	<h3><%= link_to "Sweater Weather", "https://github.com/philjdelong/sweater_weather" %></h3>
+	<p>
+		Rails API built to help travelers better plan for weather in a given location. Google Location API consumed for destination coordinates. DarkSky API consumed for forecast data. UnSplash API consumed for images.
+	</p>
+	<ul>
+		<li>Ruby on Rails
+		<li>Postgresql 
+		<li>Faraday
+	</ul>
+	<div class='photo'>
+		<%= image_tag("sweater_weather.png", alt: "Sweater Weather") %>
+	</div>
+	<div align='center' class='caption'>
+		<h5>Request / response using Postman for backend API calls</h5>
+	</div>
+	<br>
+
+	<h3><%= link_to "Brownfield of Dreams", "https://github.com/rlew421/brownfield-of-dreams" %></h3>
+	<p>
+		Educational platform focused on displaying training videos based on tags and user interests. GitHub API utilized for Authentication and YouTube API used for video display. SendGrid implemented for email notifications and invites.
+	</p>
+	<ul>
+		<li>Ruby on Rails
+		<li>Sendgrid
+		<li>Redis
+		<li>Sidekiq
+	</ul>
+	<div class='photo'>
+		<%= image_tag("bfod.png", alt: "BFoD") %>
+	</div>
+	<div align='center' class='caption'>
+		<h5>Videos displayed according to selected filters</h5>
+	</div>
+	<br>
 </div>

@@ -13,44 +13,49 @@
  *= require_tree .
  *= require_self
  */
+ 
+.photo {
+	 width: 100%;
+}
 
-	.master_nav {
-		background-color: whitesmoke;
-		position: fixed;
-		width: 100%;
-		height: 150px;
-	}
+.profile_image {
+	float: left;
+	position: fixed;
+	width: 20%;
+	padding: 5%;
+	padding-top: 50px;
+}
 
- 	.description {
-		float: right;
-		width: 52%;
-		padding-right: 10%;
-		padding-top: 200px;
-	}
-
-	.profile_image {
-		float: left;
-		padding: 5%;
-
-	}
+.description {
+	float: right;
+	width: 60%;
+	padding-right: 10%;
+	padding-top: 150px;
+}
 	
-	img {
-		position: fixed;
-		border-radius: 30px;
-		width: 25%;
-	}
+nav {
+	background-color: whitesmoke;
+	position: fixed;
+	width: 100%;
+	height: 125px;
+}
 
-	a {
-		text-decoration: none;
-		color: firebrick;
-		font-size: 125%;
-	}
+img {
+	border-radius: 30px;
+	width: 100%;
+}
 
-	h3 {
-		color: firebrick;
-		/* color:  rgb(34, 104, 178); */
-	}
+a {
+	/* text-decoration: none; */
+	color: firebrick;
+	font-size: 125%;
+}
 
-	p {
-		padding-inline-start: 2%;
-	}
+h3 {
+	color: firebrick;
+	/* color:  rgb(34, 104, 178); */
+}
+
+p {
+	padding-inline-start: 2%;
+}
