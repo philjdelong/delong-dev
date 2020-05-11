@@ -4,15 +4,12 @@ RSpec.describe "As a new user", type: :feature do
 	it "i can register" do
 		visit "/"
 
-		click_link "Register / Login"
-		expect(current_path).to eq("/login")
-
-		expect(page).to have_link("Register")
-
 		fill_in "email", with: "philjdelong@gmail.com"
-		click_button "Login"
-		expect(current_path).to eq("/registration")
-		expect(page).to have_content("No email found, please complete the form to register.")
+		fill_in "password", with: "password"
+		click_button "login / register"
+		expect(current_path).to eq("/register")
+
+		expect(page).to have_content("Please complete the form to complete registration.")
 
 		fill_in "name", with: "Phil"
 		fill_in "password", with: "password"
