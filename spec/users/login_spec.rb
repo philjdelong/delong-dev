@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "As a user" do
+RSpec.describe "As a user", type: :feature do
 	it "i can login" do
 		click_link "Register/Login"
 		fill_in "email", with: "philjdelong@gmail.com"
