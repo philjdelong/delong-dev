@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "As a new user", type: :feature do
 	it "i can register" do
-		click_link "Register/Login"
+		visit "/"
+
+		click_link "Register / Login"
 		expect(current_path).to eq("/login")
-	
 
 		expect(page).to have_link("Register")
 
