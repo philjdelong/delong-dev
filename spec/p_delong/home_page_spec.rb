@@ -4,6 +4,7 @@ RSpec.describe "As a user" do
 	describe "when i visit the home page", type: :feature do
 		before :each do
 			visit "/"
+			click_link "Home"
 		end
 
 		it "i see a profile image" do
