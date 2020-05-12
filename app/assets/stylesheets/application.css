@@ -13,13 +13,17 @@
  *= require_tree .
  *= require_self
  */
+#user_session {
+	font-size: small;
+}
+
+#field {
+	float: right;
+	padding-right: 55%;
+}
  
 #login {
 	padding-left: 10px;
-	width: 100%;
-}
- 
-.photo {
 	width: 100%;
 }
 
@@ -31,18 +35,23 @@
 	padding-top: 50px;
 }
 
+nav {
+	background-color: whitesmoke;
+	position: fixed;
+	width: 100%;
+	height: 150px;
+}
+
 .description {
+	position: static;
 	float: right;
 	width: 60%;
 	padding-right: 10%;
 	padding-top: 150px;
 }
-	
-nav {
-	background-color: whitesmoke;
-	position: fixed;
-	width: 100%;
-	height: 155px;
+
+.photo {
+  width: 100%;
 }
 
 img {
@@ -53,12 +62,11 @@ img {
 a {
 	/* text-decoration: none; */
 	color: firebrick;
-	font-size: 125%;
+
 }
 
 h3 {
 	color: firebrick;
-	/* color:  rgb(34, 104, 178); */
 }
 
 p {
