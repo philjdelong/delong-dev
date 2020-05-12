@@ -13,24 +13,37 @@
   </head>
 
   <body>
-    <nav align='center'>
-      <h1>Phil DeLong</h1>
-      <span class="pure-g">
-        <div class="pure-u-1-3"><%= link_to "Home", "/"%> </div>
-        <div class="pure-u-1-3"><%= link_to "Projects", "/projects"%> </div>
+    <nav>
+      <div id='user_session'>
+        <% if current_user %>
+          <%= "Welcome, #{current_user.username}!" %>
+          <div id='logout'>
+            <%= link_to "Log out", "/logout"%>
+          </div>
+        </div>
+        <% else %>
+          <div id='login'>
+            <%= form_tag "/login", method: "get" do %>
+              <%= text_field_tag(:username, "username", ) %>
+              <%= text_field_tag(:password, "password", ) %>
+              <%= submit_tag("login / register") %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <h1 align='center'>Phil DeLong</h1>
+
+      <span align='center' class="pure-g">
+        <div class="pure-u-1-3"><%= link_to "Home", "/"%></div>
+        <div class="pure-u-1-3"><%= link_to "Projects", "/projects"%></div>
         <div class="pure-u-1-3"><%= link_to "Resume", "/resume"%></div>
       </span>
 
-      <div class='profile_image'>
-        <%= link_to "Register / Login", "/login" %>
-          <br>
-          <br>
-        <div id='login'>
-          <%= image_tag("profile_pic.png", alt: "Profile Image") %>
-        </div>
+      <div id='profile_image'>
+        <%= image_tag("profile_pic.png", alt: "Profile Image") %>
       </div>
     </nav>
-
     <%= yield %>
   </body>
 </html>
