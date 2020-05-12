@@ -1,12 +1,13 @@
 <div class='description'>
 	<h1>Registration</h1>
 	<p>Registering an email will allow me to send email notices and updates regarding my job search. All information is securely stored and feel free to opt out anytime!</p>
-	<div align='center' id='flash'>
-		<% flash.each do |type, msg| %>
-			<%= msg %>
-		<% end %>
-	</div>
+	
 	<%= form_tag "/users" do %>
+		<div align='center' id='flash'>
+			<% flash.each do |type, msg| %>
+				<%= msg %>
+			<% end %>
+		</div>
 		<%= label_tag(:username, "username:") %>
 			<br>
 		<%= text_field_tag("username") %>

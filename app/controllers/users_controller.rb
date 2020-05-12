@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 			session[:user_id] = user.id
 			redirect_to "/"
 		else
-			flash[:error] = "Please enter a unique username and complete all fields."
+			flash[:error] = "Please try again."
 			redirect_to "/register"
 		end
 	end
