@@ -19,14 +19,9 @@
 }
 
 #flash {
-	font-size: x-small;
+	/* font-size: x-small; */
 	padding-top: 10px;
 	color: firebrick;
-}
-
-#field {
-	float: right;
-	padding-right: 55%;
 }
 
 #label {
@@ -45,7 +40,7 @@ nav {
 	background-color: whitesmoke;
 	position: fixed;
 	width: 100%;
-	height: 150px;
+	height: 140px;
 }
 
 .description {
