@@ -1,5 +1,7 @@
 {
   "name": "delong-dev",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bcrypt": "^4.0.1"
+  }
 }

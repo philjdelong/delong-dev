@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   
   get "/resume", to: "phil_delong#resume"
   get "/pdf", to: "phil_delong#pdf"
+
+  get "/login", to: "sessions#create"
+  get "/logout", to: "sessions#delete"
+
+  get "/register", to: "users#new"
+  post "/users", to: "users#create"
 end

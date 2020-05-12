@@ -52,8 +52,11 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'launchy'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
+  # webdriver replaced depreciated chromedriver
+  gem 'webdriver'
   gem 'rspec-rails'
   gem 'minitest'
   gem 'pry'
