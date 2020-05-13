@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+admin = User.find_by(email: ENV['admin_email'])
+
+admin.update(
+	username: ENV['admin_username'], 
+	email: ENV['admin_email'], 
+	password: ENV['admin_password'],
+	role: ENV['admin_role']
+)
