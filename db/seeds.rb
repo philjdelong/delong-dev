@@ -7,9 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 admin = User.find_by(email: ENV['admin_email'])
 
-admin.update(
-	username: ENV['admin_username'], 
-	email: ENV['admin_email'], 
-	password: ENV['admin_password'],
-	role: ENV['admin_role']
-)
+if admin
+	admin.update(
+		username: ENV['admin_username'], 
+		email: ENV['admin_email'], 
+		password: ENV['admin_password'],
+		role: ENV['admin_role']
+	)
+else 
+	admin.create(
+		username: ENV['admin_username'], 
+		email: ENV['admin_email'], 
+		password: ENV['admin_password'],
+		role: ENV['admin_role']
+	)
+end
