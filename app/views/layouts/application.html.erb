@@ -14,21 +14,18 @@
 
   <body>
     <nav>
-      <div id='user_session'>
+      <div align='left' id='user_session'>
+        <br>
         <% if current_user %>
-          <%= "Welcome, #{current_user.username}!" %>
-          <div id='logout'>
-            <%= link_to "Log out", "/logout"%>
-          </div>
-        </div>
+          <span class="pure-g">
+            <div class="pure-u-1"><%= "Welcome, #{current_user.username}!" %></div>
+            <div class="pure-u-1"> <%= link_to "Log out", "/logout"%></div>
+          </span>
         <% else %>
-          <div id='login'>
-            <%= form_tag "/login", method: "get" do %>
-              <%= text_field_tag(:username, "username", ) %>
-              <%= text_field_tag(:password, "password", ) %>
-              <%= submit_tag("login / register") %>
-            <% end %>
-          </div>
+          <span class="pure-g">
+            <div class="pure-u-1"><%= link_to "login", "/login"%></div>
+            <div class="pure-u-1"><%= link_to "register", "/register"%> (Let's connect!)</div>
+          </span>
         <% end %>
       </div>
 
@@ -43,6 +40,14 @@
       <div id='profile_image'>
         <%= image_tag("profile_pic.png", alt: "Profile Image") %>
       </div>
+        
+      <div align='center' id='flash'>
+        <% flash.each do |type, msg| %>
+          <%= msg %>
+        <% end %>
+      </div>
+      <br>
+
     </nav>
     <%= yield %>
   </body>
