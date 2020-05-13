@@ -1,33 +1,30 @@
 <div class='description'>
-	<h1>Registration</h1>
+	<h1>Register:</h1>
 	<p>Registering an email will allow me to send email notices and updates regarding my job search. All information is securely stored and feel free to opt out anytime!</p>
 	
 	<%= form_tag "/users" do %>
-		<div align='center' id='flash'>
-			<% flash.each do |type, msg| %>
-				<%= msg %>
-			<% end %>
-		</div>
-		<%= label_tag(:username, "username:") %>
-			<br>
-		<%= text_field_tag("username") %>
-			<br>
-			<br>
-		<%= label_tag(:email, "email:") %>
-			<br>
-			<%= text_field_tag(:email) %>
-			<br>
-			<br>
-		<%= label_tag(:password, "password:") %>
-			<br>
-			<%= text_field_tag(:password) %>
-			<br>
-			<br>
-		<%= label_tag(:password_confirmation, "confirm password:") %>
-			<br>
-			<%= text_field_tag(:password_confirmation) %>
-			<br>
-			<br>
-		<%= submit_tag("Register") %>
+		<p>
+			<%= label_tag(:username, "username:") %>
+				<br>
+			<%= text_field_tag("username") %>
+				<br>
+				<br>
+			<%= label_tag(:email, "email:") %>
+				<br>
+				<%= text_field_tag(:email) %>
+				<br>
+				<br>
+			<%= label_tag(:password, "password:") %>
+				<br>
+				<%= text_field_tag(:password) %>
+				<br>
+				<br>
+			<%= label_tag(:password_confirmation, "confirm password:") %>
+				<br>
+				<%= text_field_tag(:password_confirmation) %>
+				<br>
+				<br>
+			<%= submit_tag("Register") %>
+		</p>
 	<% end %>
 </div>
