@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+admin = User.find_by(username: ENV['admin_username'])
+
+if admin
+	User.delete(admin)
+end
 
 User.create(
 	username: ENV['admin_username'],
