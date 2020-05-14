@@ -15,10 +15,11 @@ if admin
 		role: ENV['admin_role']
 	)
 else 
-	admin.create(
+	User.create(
 		username: ENV['admin_username'], 
 		email: ENV['admin_email'], 
 		password: ENV['admin_password'],
+		password_confirmation: ENV['admin_password'],
 		role: ENV['admin_role']
 	)
 end
