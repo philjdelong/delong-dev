@@ -5,15 +5,14 @@
 	<h3>email</h3>
 	<p><%= current_user.email %></p>
 		<br>
-
 	<% if current_user.admin? %>
-		<h3>Registered Users (<%= @users.count %>)</h3>
+		<h3>Registered Users (<%= @users.count - 1 %>)</h3>
 		<% @users.each do |user| %>
-			<div>
+			<% unless user == current_user %>
 				<h1><section><%= user.username %></section></h1>
 				<p><section>email: <%= user.email %><section></p>
-			</div>
-			<br>
+			<% end %>
 		<% end %>
+		<br>
 	<% end %>
 </div>
