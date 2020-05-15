@@ -23,7 +23,7 @@
             <% else %>
               <div class="pure-u-1"><%= "Welcome, #{current_user.username}!" %></div>
             <% end %>
-            <div class="pure-u-1"> <%= link_to "Log out", "/logout"%></div>
+            <div class="pure-u-1"><%= link_to "Dashboard", "/#{current_user.username}"%> || <%= link_to "Log out", "/logout"%></div>
           </span>
         <% else %>
           <span class="pure-g">
