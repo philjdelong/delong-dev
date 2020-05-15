@@ -67,6 +67,6 @@ h3 {
 }
 
 p {
-	padding-inline-start: 1%;
-	padding-inline-end: 1%;
+	padding-inline-start: 10px;
+	padding-inline-end: 10px;
 }

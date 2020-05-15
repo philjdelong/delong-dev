@@ -2,6 +2,12 @@ class UsersController < ApplicationController
 	def new
 	end
 
+	def show
+		if current_user.admin?
+			@users = User.all
+		end
+	end
+
 	def create
 		user = User.create(user_params)
 		user.save
