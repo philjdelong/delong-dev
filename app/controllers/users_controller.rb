@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-	def new
-	end
-
 	def show
 		if current_user.admin?
 			@users = User.all
 		end
+	end
+	
+	def new
 	end
 
 	def create
