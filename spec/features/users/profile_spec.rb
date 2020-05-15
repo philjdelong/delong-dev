@@ -19,7 +19,7 @@ RSpec.describe "As a user", type: :feature do
 		it "i see username and email" do 
 			expect(page).to have_content("Profile:")
 			expect(page).to have_content("user")
-			expect(page).to have_content("email: example@email.com")
+			expect(page).to have_content("example@email.com")
 		end
 	end
 end
