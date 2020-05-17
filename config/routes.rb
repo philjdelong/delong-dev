@@ -15,5 +15,7 @@ Rails.application.routes.draw do
 
   get "/register", to: "users#new"
   post "/users", to: "users#create"
-  get "/:username", to: "users#show"
+  get "/:slug", to: "users#show"
+  get "/:slug/edit", to: "users#edit"
+  post "/:slug", to: "users#update"
 end
