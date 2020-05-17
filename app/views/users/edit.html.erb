@@ -1,0 +1,19 @@
+<div class='description'>
+	<h1>Edit:</h1>
+	
+	<%= form_tag "/#{current_user.slug}" do %>
+		<p>
+			<%= label_tag(:username, "username:") %>
+				<br>
+			<%= text_field_tag(:username) %>
+				<br>
+				<br>
+			<%= label_tag(:email, "email:") %>
+				<br>
+			<%= text_field_tag(:email) %>
+				<br>
+				<br>
+			<%= submit_tag("Update") %>
+		</p>
+	<% end %>
+</div>
