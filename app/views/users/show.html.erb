@@ -5,12 +5,17 @@
 	<h3>email</h3>
 	<p><%= current_user.email %></p>
 		<br>
+	<div><%= link_to "Edit", "/#{current_user.slug}/edit" %></div>
+		<br>
+
 	<% if current_user.admin? %>
-		<h3>Registered Users (<%= @users.count - 1 %>)</h3>
+		<h1>Registered Users: (<%= @users.count - 1 %>)</h1>
 		<% @users.each do |user| %>
 			<% unless user == current_user %>
-				<h1><section><%= user.username %></section></h1>
-				<p><section>email: <%= user.email %><section></p>
+				<ul>
+					<li>username: <p><%= user.username %></p></li>
+					<li>email: <p><%= user.email %></p></li>
+				</ul>
 			<% end %>
 		<% end %>
 		<br>
