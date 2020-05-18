@@ -22,21 +22,17 @@ class UsersController < ApplicationController
 	end
 
 	def edit
+		
 	end
 
 	def update
-		if params["username"].length == 0 || params["email"].length == 0
-			flash[:error] = "Please complete all fields"
-			redirect_to "/#{current_user.slug}/edit"
+		user = current_user
+		user.update(update_params)
+		if user.save
+			redirect_to "/"
 		else
-			current_user.update(update_params)
-			if current_user.save
-				flash[:success] = "Info successfully updated!"
-				redirect_to "/#{current_user.slug}"
-			else
-				flash[:error] = "Please try again"
-				redirect_to "/#{current_user.slug}/edit"
-			end
+			flash[:error] = "Update unsuccessful"
+			redirect_to "/#{user.slug}"
 		end
 	end
 
