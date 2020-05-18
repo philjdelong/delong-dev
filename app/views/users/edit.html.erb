@@ -5,12 +5,12 @@
 		<p>
 			<%= label_tag(:username, "username:") %>
 				<br>
-			<%= text_field_tag(:username) %>
+			<%= text_field_tag(:username, current_user.username) %>
 				<br>
 				<br>
 			<%= label_tag(:email, "email:") %>
 				<br>
-			<%= text_field_tag(:email) %>
+			<%= text_field_tag(:email, current_user.email) %>
 				<br>
 				<br>
 			<%= submit_tag("Update") %>

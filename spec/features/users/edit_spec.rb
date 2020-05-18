@@ -18,7 +18,7 @@ RSpec.describe "As a user", type: :feature do
 
 			click_link "login"
 
-			fill_in "username:", with: username
+			fill_in "email:", with: email
 			fill_in "password:", with: password
 
 			click_button "Login"
@@ -29,14 +29,13 @@ RSpec.describe "As a user", type: :feature do
 
 			click_link "Edit"
 			expect(current_path).to eq("/#{user.slug}/edit")
-			expect(current_path).to eq("/#{user.slug}/edit")
 			
 			fill_in "email:", with: "new@email.com"
 			fill_in "username:", with: "New Username"
 			
 			click_button "Update"
-			
 			expect(current_path).to eq("/#{user.slug}")
+
 
 			expect(user.email).to eq("new@email.com")
 			expect(user.username).to eq("New Username")
