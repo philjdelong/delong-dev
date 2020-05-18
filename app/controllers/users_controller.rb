@@ -24,13 +24,13 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		user = current_user
+		user = User.find(current_user.id)
 		user.update(update_params)
 		if user.save
-			redirect_to "/"
+			redirect_to "/#{user.slug}"
 		else
 			flash[:error] = "Update unsuccessful"
-			redirect_to "/#{user.slug}"
+			redirect_to "/#{user.slug}/edit"
 		end
 	end
 
