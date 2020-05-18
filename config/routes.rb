@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get "/:slug", to: "users#show"
   get "/:slug/edit", to: "users#edit"
   post "/:slug", to: "users#update"
+  delete "/:username", to: "users#delete"
 end

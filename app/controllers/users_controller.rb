@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
 	def create
 		user = User.create(user_params)
-		user.save
 		if user.save
 			flash[:success] = "Registration complete!"
 			session[:user_id] = user.id
@@ -22,7 +21,6 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		
 	end
 
 	def update
@@ -34,6 +32,14 @@ class UsersController < ApplicationController
 			flash[:error] = "Update unsuccessful"
 			redirect_to "/#{user.slug}"
 		end
+	end
+
+	def delete
+		user = User.find(current_user.id)
+		user.destroy
+		session.destroy
+		flash[:success] = "Profile successfully deleted."
+		redirect_to "/"
 	end
 
 	private

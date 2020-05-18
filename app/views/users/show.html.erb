@@ -19,5 +19,7 @@
 			<% end %>
 		<% end %>
 		<br>
+	<% else %>
+		<p><%= link_to "Delete Profile", "/#{current_user.username}", method: :delete %></p>
 	<% end %>
 </div>
