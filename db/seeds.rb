@@ -26,7 +26,3 @@ User.create(
 	password_confirmation: ENV['admin_password'],
 	role: ENV['admin_role']
 )
-
-User.all.each do |x|
-	x.get_slug
-end
