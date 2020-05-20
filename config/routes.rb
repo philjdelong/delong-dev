@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   post "/auth", to: "sessions#create"
   get "/logout", to: "sessions#delete"
 
-  get "/register", to: "users#new"
+  get "/users/register", to: "users#new"
   post "/users", to: "users#create"
-  get "/:slug", to: "users#show"
+  
+  get "/:slug/profile", to: "users#profile"
   get "/:slug/edit", to: "users#edit"
-  post "/:slug", to: "users#update"
-  delete "/:username", to: "users#delete"
+  patch "/:slug", to: "users#update"
+  delete "/:slug", to: "users#delete"
 end
