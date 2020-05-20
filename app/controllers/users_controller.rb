@@ -37,10 +37,12 @@ class UsersController < ApplicationController
 	end
 
 	def delete
-		user = User.find(current_user.id)
+		user = User.find_by(slug: params[:slug])
+		unless current_user.admin?
+			session.destroy
+		end
+		flash[:success] = "#{user.username} successfully deleted."
 		user.destroy
-		session.destroy
-		flash[:success] = "Profile successfully deleted."
 		redirect_to "/"
 	end
 

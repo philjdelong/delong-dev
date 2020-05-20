@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(
+	username: "Default",
+	email: "email@default.com",
+	password: "password",
+	password_confirmation: "password"
+)
+
 admin = User.find_by(username: ENV['admin_username'])
 
 if admin
@@ -19,3 +26,7 @@ User.create(
 	password_confirmation: ENV['admin_password'],
 	role: ENV['admin_role']
 )
+
+User.all.each do |x|
+	x.get_slug
+end
