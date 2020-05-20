@@ -15,11 +15,12 @@
 				<ul>
 					<li>username: <p><%= user.username %></p></li>
 					<li>email: <p><%= user.email %></p></li>
+					<div><%= link_to "Delete #{user.username}", "/#{user.slug}", method: :delete %></div>
 				</ul>
 			<% end %>
 		<% end %>
 		<br>
 	<% else %>
-		<p><%= link_to "Delete Profile", "/#{current_user.username}", method: :delete %></p>
+		<div><%= link_to "Delete Profile", "/#{current_user.slug}", method: :delete %></div>
 	<% end %>
 </div>
