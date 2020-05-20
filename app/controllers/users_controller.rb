@@ -14,22 +14,24 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def show
+	def profile
 		if current_user.admin?
 			@users = User.all
 		end
 	end
 
 	def edit
+		@user = User.find(current_user.id)
 	end
-
+	
 	def update
 		user = User.find(current_user.id)
-		user.update(update_params)
+		user.update(user_params)
 		if user.save
-			redirect_to "/#{user.slug}"
+			flash[:success] = "Your information has been updated"
+			redirect_to "/#{user.slug}/profile"
 		else
-			flash[:error] = "Update unsuccessful"
+			flash[:error] = "Please enter valid information"
 			redirect_to "/#{user.slug}/edit"
 		end
 	end
@@ -46,9 +48,5 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.permit(:username, :email, :password, :password_confirmation)
-	end
-	
-	def update_params
-		params.permit(:username, :email)
 	end
 end
