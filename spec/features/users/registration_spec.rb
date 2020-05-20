@@ -4,7 +4,7 @@ RSpec.describe "As a new user", type: :feature do
 	it "i can register" do
 		User.destroy_all
 		username = "username"
-		email = "emailg@gmail.com"
+		email = "email@gmail.com"
 		password = "password"
 
 		visit "/"
