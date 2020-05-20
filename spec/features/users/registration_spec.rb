@@ -4,13 +4,13 @@ RSpec.describe "As a new user", type: :feature do
 	it "i can register" do
 		User.destroy_all
 		username = "username"
-		email = "emailg@gmail.com"
+		email = "email@gmail.com"
 		password = "password"
 
 		visit "/"
 
 		click_link "register"
-		expect(current_path).to eq("/register")
+		expect(current_path).to eq("/users/register")
 
 		expect(page).to have_content("Register:")
 

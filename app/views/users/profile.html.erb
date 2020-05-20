@@ -1,0 +1,26 @@
+<div class='description'>
+	<h1>Profile:</h1>
+	<h3>username</h3>
+	<p><%= current_user.username %></p>
+	<h3>email</h3>
+	<p><%= current_user.email %></p>
+		<br>
+	<div><%= link_to "Edit", "/#{current_user.slug}/edit" %></div>
+		<br>
+
+	<% if current_user.admin? %>
+		<h1>Registered Users: (<%= @users.count - 1 %>)</h1>
+		<% @users.each do |user| %>
+			<% unless user == current_user %>
+				<ul>
+					<li>username: <p><%= user.username %></p></li>
+					<li>email: <p><%= user.email %></p></li>
+					<div><%= link_to "Delete #{user.username}", "/#{user.slug}", method: :delete %></div>
+				</ul>
+			<% end %>
+		<% end %>
+		<br>
+	<% else %>
+		<div><%= link_to "Delete Profile", "/#{current_user.slug}", method: :delete %></div>
+	<% end %>
+</div>

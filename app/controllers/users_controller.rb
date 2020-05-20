@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
 	def create
 		user = User.create(user_params)
-		user.save
 		if user.save
 			flash[:success] = "Registration complete!"
 			session[:user_id] = user.id
@@ -15,9 +14,25 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def show
+	def profile
 		if current_user.admin?
 			@users = User.all
+		end
+	end
+
+	def edit
+		@user = User.find(current_user.id)
+	end
+	
+	def update
+		user = User.find(current_user.id)
+		user.update(user_params)
+		if user.save
+			flash[:success] = "Your information has been updated"
+			redirect_to "/#{user.slug}/profile"
+		else
+			flash[:error] = "Please enter valid information"
+			redirect_to "/#{user.slug}/edit"
 		end
 	end
 
