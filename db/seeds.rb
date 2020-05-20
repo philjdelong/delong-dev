@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 User.create(
 	username: "Default",
 	email: "email@default.com",
@@ -13,7 +14,7 @@ User.create(
 	password_confirmation: "password"
 )
 
-admin = User.find_by(username: ENV['admin_username'])
+admin = User.find_by(email: ENV['admin_email'])
 
 if admin
 	User.delete(admin)
