@@ -10,7 +10,7 @@ RSpec.describe "As a new user", type: :feature do
 		visit "/"
 
 		click_link "register"
-		expect(current_path).to eq("/register")
+		expect(current_path).to eq("/users/register")
 
 		expect(page).to have_content("Register:")
 

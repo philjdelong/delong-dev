@@ -12,7 +12,7 @@ RSpec.describe "As a user", type: :feature do
 
 			allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-			visit "/#{user.username}"
+			visit "/#{user.slug}/profile"
 
 			click_link "Delete Profile"
 			expect(current_path).to eq("/")
