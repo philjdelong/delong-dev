@@ -23,9 +23,6 @@ RSpec.describe "As a new user", type: :feature do
 		end
 		expect(current_path).to eq("/")
 
-		within("#user_session") do
-			expect(page).to have_content("Welcome, #{username}!")
-			expect(page).to have_link("Log out")
-		end
+		expect(User.all.count).to eq(1)
 	end
 end
