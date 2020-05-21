@@ -17,15 +17,11 @@
 /* custom styling */
 .description {
 	padding: 20px;
-	padding-top: 160px;
+	padding-top: 180px;
 }
 
 .description img {
 	border-radius: 20px;
-}
-
-.description h1 {
-	font: small-caps;
 }
 
 .photo img {
@@ -33,33 +29,36 @@
 }
 
 #flash {
-	float: left;
 	font-size: small;
 	color: firebrick;
+	position: fixed;
 }
 
 /* tag stlying */
 a {
+	font-family: avenir;
+	font-size: large;
 	color: firebrick;
+	text-decoration: none;
 }
 
 h1 {
-	font-family: monospace;
+	font-family: avenir;
 }
 
 h3 {
-	font-family: monospace;
+	font-family: avenir;
 	color: firebrick;
 }
 
 p {
-	font-family: monospace;
+	font-family: avenir;
 	padding-inline-start: 10px;
 	padding-inline-end: 10px;
 }
 
 li {
-	font-family: monospace;
+	font-family: avenir;
 	padding-inline-start: 10px;
 	padding-inline-end: 10px;
 }
@@ -68,60 +67,15 @@ li {
 nav {
 	position: fixed;
 	width: 100%;
-	height: 160px;
+	height: 171px;
 	background-color: whitesmoke;
 }
 
 nav h1 {
-	font-size: 45px;
+	font-size: 40px;
 }
 
 /* sidenav styling */
-/* menu sidenav */
-.menu-sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 60px;
-}
-
-.menu-sidenav img {
-	border-radius: 30px;
-	display: block;
-	transition: 0.3s;
-	width: 80%;
-}
-
-.menu-sidenav p {
-	color: #f1f1f1;
-}
-
-.menu-sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.menu-sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.menu-sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
 
 /* standard .sidenav */
 .sidenav {
@@ -131,17 +85,17 @@ nav h1 {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgb(7, 7, 7);
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
 }
 
 .sidenav img {
-	border-radius: 30px;
+	border-radius: 10px;
 	display: block;
 	transition: 0.3s;
-	width: 80%;
+	width: 85%;
 }
 
 .sidenav p {
@@ -149,10 +103,10 @@ nav h1 {
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 20px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: firebrick;
   display: block;
   transition: 0.3s;
 }
@@ -177,11 +131,12 @@ nav h1 {
 }
 
 /* topnav styling */
-/* #user_session {
-	font-size: small;
-	padding-left: 10px;
-}
+#user_session {
+	font-family: avenir;
+	padding-left: 20px
 
+}
+/* 
 #label {
 	float: left;
 }
