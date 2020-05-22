@@ -14,47 +14,60 @@
 
   <body>
     <nav>
-      <div align='left' id='user_session'>
-        <br>
+      <div id="loginSidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeLogin()">&times;</a>
+
+        <div align='center'>
+          <%= image_tag("profile_pic_crop.png", alt: "Profile Image") %>
+        </div>
+          <br>
+
         <% if current_user %>
-          <span class="pure-g">
-            <% if current_user.admin? %>
-              <div class="pure-u-1"><%= "Welcome, Admin!" %></div>
-            <% else %>
-              <div class="pure-u-1"><%= "Welcome, #{current_user.username}!" %></div>
-            <% end %>
-            <div class="pure-u-1"><%= link_to "Dashboard", "/#{current_user.slug}/profile"%> || <%= link_to "Log out", "/logout"%></div>
-          </span>
+          <p align='center'><%= "Welcome, #{current_user.username}!" %></p>
+          <%= link_to "Dashboard", "/#{current_user.slug}/profile"%>
+          <%= link_to "Log out", "/logout"%>
+            <br>
+            <br>
         <% else %>
-          <span class="pure-g">
-            <div class="pure-u-1"><%= link_to "login", "/login"%></div>
-            <div class="pure-u-1"><%= link_to "register", "/users/register"%> (Let's connect!)</div>
-          </span>
+          <%= link_to "login", "/login"%>
+          <%= link_to "register", "/users/register"%>
         <% end %>
       </div>
 
-      <h1 align='center'>Phil DeLong</h1>
+      <div id="user_session">
+        <% if current_user %>
+          <div style="font-size:20px;cursor:pointer" onclick="openLogin()">&#9776; dashboard</div>
+        <% else %>
+          <div style="font-size:20px;cursor:pointer" onclick="openLogin()">&#9776; login/register</div>
+        <% end %>
+      </div>
 
-      <span align='center' class="pure-g">
+      <span><h1 align='center'>Phil DeLong</h1></span>
+    
+      <div align='center' class="pure-g">
         <div class="pure-u-1-3"><%= link_to "Home", "/"%></div>
         <div class="pure-u-1-3"><%= link_to "Projects", "/projects"%></div>
         <div class="pure-u-1-3"><%= link_to "Resume", "/resume"%></div>
-      </span>
-
-      <div id='profile_image'>
-        <%= image_tag("profile_pic.png", alt: "Profile Image") %>
       </div>
-        
-      <div align='center' id='flash'>
+
+      <div id='flash'>
         <% flash.each do |type, msg| %>
-          <%= msg %>
+          <p align='center'><%= msg %></p>
         <% end %>
       </div>
-      <br>
+
+      <script>
+        function openLogin() {
+          document.getElementById("loginSidenav").style.width = "210px";
+        }
+
+        function closeLogin() {
+          document.getElementById("loginSidenav").style.width = "0";
+        }
+      </script>
+        <br>
 
     </nav>
     <%= yield %>
   </body>
-
-
 </html>

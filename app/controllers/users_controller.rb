@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 			redirect_to "/"
 		else
 			flash[:error] = "Please try again."
-			redirect_to "/register"
+			redirect_to "/users/register"
 		end
 	end
 

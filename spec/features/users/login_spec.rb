@@ -13,18 +13,13 @@ RSpec.describe "As a user", type: :feature do
 			password_confirmation: password,
 		)
 
-		visit "/"
-
-		within('#user_session') do
-			click_link "login"
-		end
-		expect(current_path).to eq("/login")
+		visit "/login"
 		
 		fill_in "email", with: email
 		fill_in "password", with: password
 		click_button "Login"
 		expect(current_path).to eq("/")
 		
-		expect(page).to have_content("Welcome, #{username}!")
+		expect(page).to have_content("Welcome, #{user.username}!")
 	end
 end
