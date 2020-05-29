@@ -15,6 +15,7 @@
 				<ul>
 					<li>username: <p><%= user.username %></p></li>
 					<li>email: <p><%= user.email %></p></li>
+					<li>role: <p><%= user.role %></p></li>
 					<div><%= link_to "Delete #{user.username}", "/#{user.slug}", method: :delete %></div>
 				</ul>
 				<br>
