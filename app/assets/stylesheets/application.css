@@ -14,26 +14,6 @@
  *= require_self
  */
 
-/* custom styling */
-.description {
-	padding: 20px;
-	padding-top: 180px;
-}
-
-.description img {
-	border-radius: 20px;
-}
-
-.photo img {
-	width: 100%;
-}
-
-#flash {
-	font-size: small;
-	color: firebrick;
-	position: fixed;
-}
-
 /* tag stlying */
 a {
 	font-family: avenir;
@@ -51,32 +31,41 @@ h3 {
 	color: firebrick;
 }
 
-p {
+p, li {
 	font-family: avenir;
 	padding-inline-start: 10px;
 	padding-inline-end: 10px;
 }
 
-li {
-	font-family: avenir;
-	padding-inline-start: 10px;
-	padding-inline-end: 10px;
+/* custom styling */
+.description {
+	padding: 20px;
+	padding-top: 150px;
+}
+
+.description img {
+	border-radius: 20px;
+}
+
+.photo img {
+	width: 100%;
+}
+
+#flash {
+	font-size: small;
+	color: firebrick;
+	position: fixed;
 }
 
 /* corenav stlying */
 nav {
 	position: fixed;
 	width: 100%;
-	height: 171px;
+	height: 140px;
 	background-color: whitesmoke;
 }
 
-nav h1 {
-	font-size: 40px;
-}
-
 /* sidenav styling */
-
 /* standard .sidenav */
 .sidenav {
   height: 100%;
@@ -85,14 +74,14 @@ nav h1 {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(7, 7, 7);
+  background-color: rgb(0, 0, 0);
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
 }
 
 .sidenav img {
-	border-radius: 10px;
+	border-radius: 100%;
 	display: block;
 	transition: 0.3s;
 	width: 85%;
@@ -106,13 +95,13 @@ nav h1 {
   padding: 8px 8px 8px 20px;
   text-decoration: none;
   font-size: 25px;
-  color: firebrick;
   display: block;
   transition: 0.3s;
+  color: #f1f1f1;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+	color: firebrick;
 }
 
 .sidenav .closebtn {
@@ -131,20 +120,26 @@ nav h1 {
 }
 
 /* topnav styling */
-#user_session {
+
+/* Title styling and position */
+#nav-links img {
+	width: 20px;
+	padding: 10px;
+	float: right;
+}
+
+#nav-links {
+	width: 100%;
+	padding-bottom: 20px;
+}
+
+#user-session {
+	float: left ;
 	font-family: avenir;
-	padding-left: 20px
-
-}
-/* 
-#label {
-	float: left;
+	padding: 5px
 }
 
-#profile_image {
-	float: left;
-	position: fixed;
-	width: 20%;
-	padding: 5%;
-	padding-top: 50px;
-} */
+#nav-title h1 {
+	/* position: fixed; */
+	/* padding-top: 30px; */
+}
