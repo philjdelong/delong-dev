@@ -1,7 +1,10 @@
 # README
 
-* Ruby version
-- rbenv: 2.4.1
+__DeLongDev is the e-portfolio for me, Phil DeLong!__
+- About
+- Projects
+- Resume
 
-* Travis CI
-- https://travis-ci.com/github/philjdelong/delong-dev
+* Ruby version: _rbenv: 2.4.1_
+
+* Travis CI: https://travis-ci.com/github/philjdelong/delong-dev
