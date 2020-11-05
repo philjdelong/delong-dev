@@ -4,7 +4,7 @@ services:
 language: ruby
 
 rbenv:
-  - 2.4.1
+  - 2.5.0
   
 script:
   - bundle exec rails db:reset db:setup db:migrate db:seed RAILS_ENV=test
