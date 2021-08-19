@@ -20,6 +20,7 @@ a {
 	font-size: large;
 	color: firebrick;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 h1 {
@@ -48,7 +49,8 @@ p, li {
 }
 
 .photo img {
-	width: 100%;
+	width: 80%;
+	margin-left: 10%;
 }
 
 #flash {
@@ -68,16 +70,16 @@ nav {
 /* sidenav styling */
 /* standard .sidenav */
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0, 0, 0);
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 60px;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0);
+	overflow-x: hidden;
+	transition: 0.3s;
+	padding-top: 60px;
 }
 
 .sidenav img {

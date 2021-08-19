@@ -24,13 +24,22 @@
 
         <% if current_user %>
           <p align="center"><%= "Welcome, #{current_user.username}!" %></p>
-          <%= link_to "Dashboard", "/#{current_user.slug}/profile"%>
-          <%= link_to "Log out", "/logout"%>
+          
+          <div onclick="closeLogin()">
+            <%= link_to "Dashboard", "/#{current_user.slug}/profile"%>
+          </div>
+          <div onclick="closeLogin()">
+            <%= link_to "Log out", "/logout"%>
+          </div>
             <br>
             <br>
         <% else %>
-          <%= link_to "login", "/login"%>
-          <%= link_to "register", "/users/register"%>
+          <div onclick="closeLogin()">
+            <%= link_to "login", "/login"%>
+          </div>
+          <div onclick="closeLogin()">
+            <%= link_to "register", "/users/register"%>
+          </div>
         <% end %>
       </div>
 
