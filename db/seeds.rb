@@ -16,7 +16,9 @@ users.each do |user|
 			username: username,
 			email: email,
 			password: email,
-			password_confirmation: email
+			password_confirmation: email,
+			lifetime_wins: 0,
+			lifetime_losses: 0
 		)
 	end
 end
@@ -25,7 +27,9 @@ User.create(
 	username: "Default",
 	email: "email@default.com",
 	password: "password",
-	password_confirmation: "password"
+	password_confirmation: "password",
+	lifetime_wins: 0,
+	lifetime_losses: 0
 )
 
 admin = User.find_by(email: ENV['admin_email'])
