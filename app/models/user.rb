@@ -1,8 +1,10 @@
 class User < ApplicationRecord
 	validates :email, uniqueness: true
-	validates_presence_of :username, :email, :password, :password_confirmation, :role
+	validates_presence_of :username, :email, :role
 	before_validation :get_slug
 	validates :slug, uniqueness: true
+
+	has_many :games
 
 	has_secure_password
 	enum role: %w(default admin)

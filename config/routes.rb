@@ -5,6 +5,14 @@ Rails.application.routes.draw do
   get "/projects", to: "phil_delong#projects"
   get "/career", to: "phil_delong#career"
   get "/education", to: "phil_delong#education"
+  get "/game", to: "phil_delong#game"
+
+  post "/games/create", to: "games#create"
+  get "/games/delete", to: "games#delete"
+  get "/games/higher", to: "games#higher"
+  get "/games/lower", to: "games#lower"
+  
+  get "/reset_stats", to: "games#reset_stats"
   
   get "/resume", to: "phil_delong#resume"
   get "/pdf", to: "phil_delong#pdf"

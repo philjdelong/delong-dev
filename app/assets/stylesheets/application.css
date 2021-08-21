@@ -136,3 +136,15 @@ nav {
 	/* position: fixed; */
 	/* padding-top: 30px; */
 }
+
+#stats {
+	float: right;
+	padding-right: 3%;
+	font-weight: bold;
+}
+
+#howto {
+	float: left;
+	padding-left: 3%;
+	font-style: italic;
+}

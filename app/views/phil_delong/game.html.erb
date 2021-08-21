@@ -1,0 +1,68 @@
+<div id='game' class='description'>
+    <h1 >Higher or Lower!</h1>
+	<% if current_user %>
+
+        <div id='howto'>
+            <div>- Guess whether the next roll will be higher or lower (1-10)</div>
+            <div>- Score 10 to win, or three strikes and you're out!</div>
+        </div>
+
+        <div id='stats' align='right'>
+            <div id='wins'>Lifetime Wins: <%= current_user.lifetime_wins %></div>
+            <div id='losses'>Lifetime Losses: <%= current_user.lifetime_losses %></div>
+            <br>
+            <%= link_to "Reset", "/reset_stats" %>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div id='game' align='center'>
+            <% if @game %>
+                <div>
+                    <% if @game.strikes < 3 && @game.current_score < 10 %>
+                        <div align='left'>
+                            <%= link_to "Quit Game", "/games/delete" %>
+                        </div>
+                        <br>
+                        <br>
+                        <%= link_to "Higher   ", "/games/higher" %>
+                        <h1>Current roll: <%= @game.current_roll %></h1>
+                        <%= link_to "   Lower", "/games/lower" %>
+                    <% else %>
+                        <div align='left'>
+                            <%= link_to "New Game", "/games/create", method: :post %>
+                        </div>
+                        <% if @game.strikes < 3 %>
+                            <br>
+                            <br>
+                            <h3>Winner!</h3>
+                            <h1>Current roll: <%= @game.current_roll %></h1>
+                        <% else %>
+                            <br>
+                            <br>
+                            <h3>Strike out!</h3>
+                            <h1>Current roll: <%= @game.current_roll %></h1>
+                        <% end %>
+                    <% end %>
+                    <br>
+                    <br>
+                    <div id="scoreboard">
+                        Score: <%= @game.current_score %>
+                        <br>
+                        Strikes: <%= @game.strikes %>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            <% else %>
+                <div align='left'>
+                    <%= link_to "New Game", "/games/create", method: :post %>
+                </div>
+            <% end %>
+        </div>
+    <% else %>
+        <p>Please login to play!</p>
+    <% end %>
+</div>
