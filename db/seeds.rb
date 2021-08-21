@@ -39,5 +39,7 @@ User.create(
 	email: ENV['admin_email'],
 	password: ENV['admin_password'],
 	password_confirmation: ENV['admin_password'],
-	role: ENV['admin_role']
+	role: ENV['admin_role'],
+	lifetime_wins: 0,
+	lifetime_losses: 0
 )
