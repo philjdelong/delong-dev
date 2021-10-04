@@ -11,7 +11,7 @@
             <div id='wins'>Lifetime Wins: <%= current_user.lifetime_wins %></div>
             <div id='losses'>Lifetime Losses: <%= current_user.lifetime_losses %></div>
             <br>
-            <%= link_to "Reset", "/reset_stats" %>
+            <div id='reset'><%= link_to "Reset Stats", "/reset_stats" %></div>
         </div>
 
         <br>
@@ -20,32 +20,24 @@
 
         <div id='game' align='center'>
             <% if @game %>
+                <div align='left'>
+                    <%= link_to "New Game", "/games/create", method: :post %>
+                </div>
                 <div>
                     <% if @game.strikes < 3 && @game.current_score < 10 %>
-                        <div align='left'>
-                            <%= link_to "Quit Game", "/games/delete" %>
+                        <div id="higher" onclick="guessHigher()">
+                            <%= link_to "Higher   ", "/games/higher" %>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <%= link_to "Higher   ", "/games/higher" %>
+
                         <h1>Current roll: <%= @game.current_roll %></h1>
-                        <%= link_to "   Lower", "/games/lower" %>
-                    <% else %>
-                        <div align='left'>
-                            <%= link_to "New Game", "/games/create", method: :post %>
+                        <div id="lower" onclick="guessLower()">
+                            <%= link_to "Lower", "/games/lower" %>
                         </div>
+                    <% else %>
                         <% if @game.strikes < 3 %>
-                            <br>
-                            <br>
                             <h3>Winner!</h3>
-                            <h1>Current roll: <%= @game.current_roll %></h1>
                         <% else %>
-                            <br>
-                            <br>
                             <h3>Strike out!</h3>
-                            <h1>Current roll: <%= @game.current_roll %></h1>
                         <% end %>
                     <% end %>
                     <br>
@@ -68,3 +60,13 @@
         <p>Please login to play!</p>
     <% end %>
 </div>
+
+<script>
+    function guessHigher() {
+        document.getElementById("higher");
+    }
+
+    function guessLower() {
+        document.getElementById("lower");
+    }
+</script>
