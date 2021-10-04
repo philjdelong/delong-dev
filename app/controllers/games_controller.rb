@@ -71,17 +71,6 @@ class GamesController < ApplicationController
         redirect_to "/game"
     end
     
-    def delete
-        game = Game.find_by(user_id: current_user.id)
-        if game
-            game.destroy
-            redirect_to "/game"
-        else
-            flash[:error] = "No Dice..."
-            redirect_to "/game"
-        end
-    end
-    
     def reset_stats
         if current_user
             current_user.update(lifetime_wins: 0, lifetime_losses: 0)

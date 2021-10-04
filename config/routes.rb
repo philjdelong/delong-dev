@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get "/game", to: "phil_delong#game"
 
   post "/games/create", to: "games#create"
-  get "/games/delete", to: "games#delete"
   get "/games/higher", to: "games#higher"
   get "/games/lower", to: "games#lower"
   
